@@ -7,18 +7,21 @@ background: ${({ theme }) => theme.bg};
 padding: 10px 0px;
 height: auto;
 width: 100%;
+display: flex;
+justify-content: center;
 `;
 const FlexContainer = styled.div`
 display: flex;
-justify-content: space-evenly;
 align-items: center;
+justify-content: space-between;
+width: 60%;
 `;
 const ContactInfo = styled.div`
 display: flex;
 gap: 60px;
 `;
 const LogoImg = styled.img`
-height: 50px;
+width: 300px;
 `;
 const Title = styled.div`
 color: #b5b8bf;
