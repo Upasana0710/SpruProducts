@@ -1,17 +1,20 @@
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import Home from '../src/pages/Home';
 import TopBar from '../src/components/TopBar';
+import Navbar from '../src/components/Navbar';
+import All from '../src/components/All';
+import { lightTheme } from "./utils/Theme";
 
 const Spru = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100vh;
   background: ${({ theme }) => theme.bgLight};
-  overflow-y: hidden;
   overflow-x: hidden;
+  overflow-y: hidden;
+  height: 150vh;
 `;
 const Container = styled.div`
   display: flex;
@@ -20,22 +23,25 @@ const Container = styled.div`
 `;
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-          <Spru>
-            <Container>
-              <TopBar />
-              <Routes>
-                <Route
-                  path="/"
-                  exact
-                  element= <Home/>
-                />
-              </Routes>
-            </Container>
-          </Spru>
-      </BrowserRouter>
-    </div>
+    <ThemeProvider theme={lightTheme}>
+      <div className="App">
+        <BrowserRouter>
+            <Spru>
+              <Container>
+                <TopBar />
+                <All />
+                <Routes>
+                  <Route
+                    path="/"
+                    exact
+                    element= <Home/>
+                  />
+                </Routes>
+              </Container>
+            </Spru>
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 }
 
