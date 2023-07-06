@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import Home from '../src/pages/Home';
+import TopBar from '../src/components/TopBar';
 
+const Spru = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  background: ${({ theme }) => theme.bgLight};
+  overflow-y: hidden;
+  overflow-x: hidden;
+`;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+`;
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+          <Spru>
+            <Container>
+              <TopBar />
+              <Routes>
+                <Route
+                  path="/"
+                  exact
+                  element= <Home/>
+                />
+              </Routes>
+            </Container>
+          </Spru>
+      </BrowserRouter>
     </div>
   );
 }
