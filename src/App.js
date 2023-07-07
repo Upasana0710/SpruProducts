@@ -14,7 +14,6 @@ const Spru = styled.div`
   background: ${({ theme }) => theme.bgLight};
   overflow-x: hidden;
   overflow-y: hidden;
-  height: 200vh;
 `;
 const Container = styled.div`
   display: flex;
