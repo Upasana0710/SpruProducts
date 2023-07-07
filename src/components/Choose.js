@@ -74,6 +74,11 @@ const ServicesWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 16px;
+  &:hover{
+    transform-origin: bottom center;
+    background: linear-gradient(to bottom, #0077d8 0, #16bae1 100%);
+    transition: transform 0.3s;
+  }
 `;
 
 const ServicesText = styled.div`
@@ -82,6 +87,7 @@ const ServicesText = styled.div`
   text-transform: uppercase;
   font-weight: 400;
   text-align: center;
+  width: 140px;
 `;
 
 const Choose = () => {
