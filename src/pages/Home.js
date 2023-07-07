@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import HeroSlider from '../components/HeroSlider';
 import Welcome from '../components/Welcome';
+import Choose from '../components/Choose';
 
 const HomeContainer = styled.div`
 display: flex;
@@ -12,6 +13,7 @@ const Home = () => {
     <HomeContainer>
       <HeroSlider />
       <Welcome />
+      <Choose />
     </HomeContainer>
   )
 }

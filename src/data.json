@@ -21,5 +21,22 @@
         "category4pic": "https://www.spruproducts.in/images/icon/h4.png",
         "category4title": "Contact", 
         "category4Desc": "Please feel free to comunicate with us 24/7."
+   },
+   "choose": {
+        "bannerImage": "https://www.bigbasket.com/media/uploads/groot/images/3042020-941ceafe-banner_01.jpg",
+        "chooseHeading": "Why Choose Us",
+        "chooseDesc": "We are Manufacturing Cleaning Chemicals For Commercials, Industrials, Hotels, Hospitals, Institutions, Theaters, Shopping malls, Offices, NGOs..",
+        "chooseIcon1": "https://www.spruproducts.in/images/icon/icon1.png",
+        "chooseService1": "Customer Support",
+        "chooseIcon2": "https://www.spruproducts.in/images/icon/icon4.png",
+        "chooseService2": "Quality",
+        "chooseIcon3": "https://www.spruproducts.in/images/icon/icon2.png",
+        "chooseService3": "Safety & Security",
+        "chooseIcon4": "https://www.spruproducts.in/images/icon/icon5.png",
+        "chooseService4": "Networking",
+        "chooseIcon5": "https://www.spruproducts.in/images/icon/icon3.png",
+        "chooseService5": "Customer Engagement",
+        "chooseIcon6": "https://www.spruproducts.in/images/icon/icon6.png",
+        "chooseService6": "Delivery"
    }
 }
