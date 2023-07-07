@@ -1,7 +1,25 @@
 {
-   "heroimage1": "https://www.spruproducts.in/images/main-slider/1.png",
-   "heroimage2": "https://www.spruproducts.in/images/main-slider/2.png",
-   "heroimage3": "https://www.spruproducts.in/images/main-slider/3.png",
-   "toiletCleaner": "https://www.spruproducts.in/images/pic11.jpg",
-   "welcomeHeading": "Welcome to SPRU Products"
+    "images": { 
+        "heroimage1": "https://www.spruproducts.in/images/main-slider/1.png",
+        "heroimage2": "https://www.spruproducts.in/images/main-slider/2.png",
+        "heroimage3": "https://www.spruproducts.in/images/main-slider/3.png",
+        "toiletCleaner": "https://www.spruproducts.in/images/pic11.jpg"
+
+    }, 
+   "welcomeHeading": "Welcome to SPRU Products",
+   "welcomeDescription": "Spru Products is one of the reliable Manufacturers, Exporters, and Suppliers of many items. We are an ISO 9001-2008 certified company. Our product range comprises of House Cleaning Chemicals, Autocare Products, and Laundry Products. We deliver good quality products at low cost. That is why our customers trust us and this helps us to create a long-term relationship with our customers. We use innovation and knowledge for creating ideas that can reduce the impact of our business operations on the environment. All our products are eco-friendly, biodegradable with extraordinary performance in action. These are manufactured using sophisticated machines, under the guidance of our qualified technician & team of experts.",
+   "categories": {
+        "category1pic": "https://www.spruproducts.in/images/icon/h1.png",
+        "category1title": "Manufacturing", 
+        "category1Desc": "Our Manufacturing facilities is located at Nawabganj, Barabanki, Uttar Pradesh.",
+        "category2pic": "https://www.spruproducts.in/images/icon/h2.png",
+        "category2title": "Market Presence", 
+        "category2Desc": "We support the on field sales team through round the clock Marketing and Technical support.",
+        "category3pic": "https://www.spruproducts.in/images/icon/h3.png",
+        "category3title": "R & D", 
+        "category3Desc": "We have a team of consultants who are specialist for various products of the Industry.",
+        "category4pic": "https://www.spruproducts.in/images/icon/h4.png",
+        "category4title": "Contact", 
+        "category4Desc": "Please feel free to comunicate with us 24/7."
+   }
 }

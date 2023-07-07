@@ -41,7 +41,7 @@ const SlideshowImage = styled.img`
 `;
 
 const HeroSlider = () => {
-  const images = [data.heroimage1, data.heroimage2, data.heroimage3];
+  const images = [data.images.heroimage1, data.images.heroimage2, data.images.heroimage3];
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
