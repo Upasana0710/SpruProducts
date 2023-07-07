@@ -59,5 +59,20 @@
         "industry5Title": "Government & Corporate",
         "industry6Image": "https://www.spruproducts.in/images/our-work/s6.jpg",
         "industry6Title": "Railway & Automobile"
+   },
+   "testimonials": {
+     "profileIcon": "https://www.spruproducts.in/images/testimonials/t1.jpg",
+     "comment1": "I am totally surprised by the quality. Amazing Products with the best quality. SYFO Toilet Cleaner is superb... Well done Spru!",
+     "name1": "Dinesh Jaiswal",
+     "role1": "Proprieter",
+     "company1": "Jaiswal Trading Company, Maharajganj",
+     "comment2": "Kitchen Product range is quite impressive. It will be good option for hotel industry. Highly Recommended..",
+     "name2": "Anil Kumar Mathur",
+     "role2": "Proprieter",
+     "company2": "MMR Enterprises, Lucknow",
+     "comment3": "I am very happy with Spru Products, they are very friendly and always ready to take new challenge . We closed several great clients in Utter Pradesh as well India also.",
+     "name3": "Hament Gupta",
+     "role3": "Proprieter",
+     "company3": "GNG Distributors, Sitapur"
    }
 }
