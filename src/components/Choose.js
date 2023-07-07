@@ -13,7 +13,7 @@ const ChooseContainer = styled.div`
 `;
 
 const GradientBackground = styled.div`
-  background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(196, 215, 178)), url(${data.choose.bannerImage});
+  background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(21, 168, 107)), url(${data.choose.bannerImage});
   height: 350px;
   width: 100%;
   opacity: 0.9;
