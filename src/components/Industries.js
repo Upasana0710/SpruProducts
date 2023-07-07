@@ -30,7 +30,7 @@ const ContentContainer = styled.div`
 const IndustriesContainer = styled.div`
   width: 100%;
   height: 800px;
-  background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(196, 215, 178));
+  background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(21, 168, 107));
   opacity: 0.9;
   display: flex;
   align-items: center;
