@@ -6,6 +6,7 @@ import TopBar from '../src/components/TopBar';
 import Navbar from '../src/components/Navbar';
 import All from '../src/components/All';
 import { lightTheme } from "./utils/Theme";
+import Footer from './components/Footer';
 
 const Spru = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ function App() {
                     element= <Home/>
                   />
                 </Routes>
+                <Footer />
               </Container>
             </Spru>
         </BrowserRouter>
