@@ -38,5 +38,26 @@
         "chooseService5": "Customer Engagement",
         "chooseIcon6": "https://www.spruproducts.in/images/icon/icon6.png",
         "chooseService6": "Delivery"
+   },
+   "products": {
+        "product1Image": "https://www.spruproducts.in/images/gallery/s1-1.jpg",
+        "product2Image": "https://www.spruproducts.in/images/gallery/s2-1.jpg",
+        "product3Image": "https://www.spruproducts.in/images/gallery/s3-1.jpg"
+   },
+   "industries": {
+        "industriesHeading": "Industries we serve",
+        "indusetriesDescription": "We are happy to announce to you that we are providing services to different sectors, from government to non-government, NGO's, corporate companies, and central government as well.",
+        "industry1Image": "https://www.spruproducts.in/images/our-work/s1.jpg",
+        "industry1Title": "Domestic",
+        "industry2Image": "https://www.spruproducts.in/images/our-work/s2.jpg",
+        "industry2Title": "Commercial",
+        "industry3Image": "https://www.spruproducts.in/images/our-work/s3.jpg",
+        "industry3Title": "Industrial",
+        "industry4Image": "https://www.spruproducts.in/images/our-work/s4.jpg",
+        "industry4Title": "House Keeping",
+        "industry5Image": "https://www.spruproducts.in/images/our-work/s5.jpg",
+        "industry5Title": "Government & Corporate",
+        "industry6Image": "https://www.spruproducts.in/images/our-work/s6.jpg",
+        "industry6Title": "Railway & Automobile"
    }
 }
