@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import data from '../data.json';
+import React from "react";
+import styled from "styled-components";
+import data from "../data.json";
 
 const Heading = styled.div`
   font-size: 38px;
@@ -9,6 +9,9 @@ const Heading = styled.div`
   text-align: center;
   margin-bottom: 46px;
   text-transform: uppercase;
+  @media (max-width: 800px) {
+    width: 90%;
+  }
 `;
 
 const Paragraph = styled.div`
@@ -25,6 +28,9 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 800px) {
+    width: 85%;
+  }
 `;
 
 const IndustriesContainer = styled.div`
@@ -83,7 +89,7 @@ const ItemContainer = styled.div`
   height: 231px;
   overflow: hidden;
   &:hover ${Overlay} {
-    opacity: 1;
+    opacity: 0.8;
   }
 `;
 
@@ -93,29 +99,29 @@ const Image = styled.img`
   overflow: hidden;
   height: 231px;
   object-fit: cover;
-  &:hover{
+  &:hover {
     transform: scale(1.5);
   }
 `;
 
 const Industries = () => {
-    const info = data.industries.industryInfo;
+  const info = data.industries.industryInfo;
   return (
     <IndustriesContainer>
       <ContentContainer>
         <Heading>{data.industries.industriesHeading}</Heading>
         <Paragraph>{data.industries.indusetriesDescription}</Paragraph>
         <Images>
-            <Items>
-                {info.map((industry) => (
-                    <ItemContainer>
-                        <Image alt="" src={industry.industryImage} />
-                        <Overlay>
-                          <OverlayText>{industry.industryTitle}</OverlayText>
-                        </Overlay>
-                    </ItemContainer>
-                ))}
-            </Items>
+          <Items>
+            {info.map((industry) => (
+              <ItemContainer>
+                <Image alt="" src={industry.industryImage} />
+                <Overlay>
+                  <OverlayText>{industry.industryTitle}</OverlayText>
+                </Overlay>
+              </ItemContainer>
+            ))}
+          </Items>
         </Images>
       </ContentContainer>
     </IndustriesContainer>
