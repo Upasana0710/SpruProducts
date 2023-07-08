@@ -1,64 +1,101 @@
 {
-    "images": { 
+    "hero": { 
         "heroimage1": "https://www.spruproducts.in/images/main-slider/1.png",
         "heroimage2": "https://www.spruproducts.in/images/main-slider/2.png",
-        "heroimage3": "https://www.spruproducts.in/images/main-slider/3.png",
-        "toiletCleaner": "https://www.spruproducts.in/images/pic11.jpg"
-
-    }, 
-   "welcomeHeading": "Welcome to SPRU Products",
-   "welcomeDescription": "Spru Products is one of the reliable Manufacturers, Exporters, and Suppliers of many items. We are an ISO 9001-2008 certified company. Our product range comprises of House Cleaning Chemicals, Autocare Products, and Laundry Products. We deliver good quality products at low cost. That is why our customers trust us and this helps us to create a long-term relationship with our customers. We use innovation and knowledge for creating ideas that can reduce the impact of our business operations on the environment. All our products are eco-friendly, biodegradable with extraordinary performance in action. These are manufactured using sophisticated machines, under the guidance of our qualified technician & team of experts.",
-   "categories": {
-        "category1pic": "https://www.spruproducts.in/images/icon/h1.png",
-        "category1title": "Manufacturing", 
-        "category1Desc": "Our Manufacturing facilities is located at Nawabganj, Barabanki, Uttar Pradesh.",
-        "category2pic": "https://www.spruproducts.in/images/icon/h2.png",
-        "category2title": "Market Presence", 
-        "category2Desc": "We support the on field sales team through round the clock Marketing and Technical support.",
-        "category3pic": "https://www.spruproducts.in/images/icon/h3.png",
-        "category3title": "R & D", 
-        "category3Desc": "We have a team of consultants who are specialist for various products of the Industry.",
-        "category4pic": "https://www.spruproducts.in/images/icon/h4.png",
-        "category4title": "Contact", 
-        "category4Desc": "Please feel free to comunicate with us 24/7."
-   },
+        "heroimage3": "https://www.spruproducts.in/images/main-slider/3.png"
+    },
+    "welcome": {
+        "toiletCleaner": "https://www.spruproducts.in/images/pic11.jpg",
+        "welcomeHeading": "Welcome to SPRU Products",
+        "welcomeDescription": "Spru Products is one of the reliable Manufacturers, Exporters, and Suppliers of many items. We are an ISO 9001-2008 certified company. Our product range comprises of House Cleaning Chemicals, Autocare Products, and Laundry Products. We deliver good quality products at low cost. That is why our customers trust us and this helps us to create a long-term relationship with our customers. We use innovation and knowledge for creating ideas that can reduce the impact of our business operations on the environment. All our products are eco-friendly, biodegradable with extraordinary performance in action. These are manufactured using sophisticated machines, under the guidance of our qualified technician & team of experts."
+    },
+   "categories": [
+        {
+          "categorypic": "https://www.spruproducts.in/images/icon/h1.png",
+          "categorytitle": "Manufacturing", 
+          "categoryDesc": "Our Manufacturing facilities is located at Nawabganj, Barabanki, Uttar Pradesh."
+        },
+        {
+          "categorypic": "https://www.spruproducts.in/images/icon/h2.png",
+          "categorytitle": "Market Presence", 
+          "categoryDesc": "We support the on field sales team through round the clock Marketing and Technical support."
+        },
+        {
+          "categorypic": "https://www.spruproducts.in/images/icon/h3.png",
+          "categorytitle": "R & D", 
+          "categoryDesc": "We have a team of consultants who are specialist for various products of the Industry."
+        },
+        {
+          "categorypic": "https://www.spruproducts.in/images/icon/h4.png",
+          "categorytitle": "Contact", 
+          "categoryDesc": "Please feel free to comunicate with us 24/7."
+        }
+   ],
    "choose": {
         "bannerImage": "https://www.bigbasket.com/media/uploads/groot/images/3042020-941ceafe-banner_01.jpg",
         "chooseHeading": "Why Choose Us",
         "chooseDesc": "We are Manufacturing Cleaning Chemicals For Commercials, Industrials, Hotels, Hospitals, Institutions, Theaters, Shopping malls, Offices, NGOs..",
-        "chooseIcon1": "https://www.spruproducts.in/images/icon/icon1.png",
-        "chooseService1": "Customer Support",
-        "chooseIcon2": "https://www.spruproducts.in/images/icon/icon4.png",
-        "chooseService2": "Quality",
-        "chooseIcon3": "https://www.spruproducts.in/images/icon/icon2.png",
-        "chooseService3": "Safety & Security",
-        "chooseIcon4": "https://www.spruproducts.in/images/icon/icon5.png",
-        "chooseService4": "Networking",
-        "chooseIcon5": "https://www.spruproducts.in/images/icon/icon3.png",
-        "chooseService5": "Customer Engagement",
-        "chooseIcon6": "https://www.spruproducts.in/images/icon/icon6.png",
-        "chooseService6": "Delivery"
+        "services": [
+          {
+               "chooseIcon": "https://www.spruproducts.in/images/icon/icon1.png",
+               "chooseService": "Customer Support"
+          },
+          {
+               "chooseIcon": "https://www.spruproducts.in/images/icon/icon4.png",
+               "chooseService": "Quality"
+          },
+          {
+               "chooseIcon": "https://www.spruproducts.in/images/icon/icon2.png",
+               "chooseService": "Safety & Security"
+          },
+          {
+               "chooseIcon": "https://www.spruproducts.in/images/icon/icon5.png",
+               "chooseService": "Networking"
+          },
+          {
+               "chooseIcon": "https://www.spruproducts.in/images/icon/icon3.png",
+               "chooseService": "Customer Engagement"
+          },
+          {
+               "chooseIcon": "https://www.spruproducts.in/images/icon/icon6.png",
+               "chooseService": "Delivery"
+          }
+        ]
    },
-   "products": {
-        "product1Image": "https://www.spruproducts.in/images/gallery/s1-1.jpg",
-        "product2Image": "https://www.spruproducts.in/images/gallery/s2-1.jpg",
-        "product3Image": "https://www.spruproducts.in/images/gallery/s3-1.jpg"
-   },
+   "products": [
+        "https://www.spruproducts.in/images/gallery/s1-1.jpg",
+        "https://www.spruproducts.in/images/gallery/s2-1.jpg",
+        "https://www.spruproducts.in/images/gallery/s3-1.jpg"
+     ],
    "industries": {
         "industriesHeading": "Industries we serve",
         "indusetriesDescription": "We are happy to announce to you that we are providing services to different sectors, from government to non-government, NGO's, corporate companies, and central government as well.",
-        "industry1Image": "https://www.spruproducts.in/images/our-work/s1.jpg",
-        "industry1Title": "Domestic",
-        "industry2Image": "https://www.spruproducts.in/images/our-work/s2.jpg",
-        "industry2Title": "Commercial",
-        "industry3Image": "https://www.spruproducts.in/images/our-work/s3.jpg",
-        "industry3Title": "Industrial",
-        "industry4Image": "https://www.spruproducts.in/images/our-work/s4.jpg",
-        "industry4Title": "House Keeping",
-        "industry5Image": "https://www.spruproducts.in/images/our-work/s5.jpg",
-        "industry5Title": "Government & Corporate",
-        "industry6Image": "https://www.spruproducts.in/images/our-work/s6.jpg",
-        "industry6Title": "Railway & Automobile"
+        "industryInfo": [
+          {
+               "industryImage": "https://www.spruproducts.in/images/our-work/s1.jpg",
+               "industryTitle": "Domestic"
+          },
+          {
+               "industryImage": "https://www.spruproducts.in/images/our-work/s2.jpg",
+               "industryTitle": "Commercial"
+          },
+          {
+               "industryImage": "https://www.spruproducts.in/images/our-work/s3.jpg",
+               "industryTitle": "Industrial"
+          },
+          {
+               "industryImage": "https://www.spruproducts.in/images/our-work/s4.jpg",
+               "industryTitle": "House Keeping"
+          },
+          {
+               "industryImage": "https://www.spruproducts.in/images/our-work/s5.jpg",
+               "industryTitle": "Government & Corporate"
+          },
+          {
+               "industryImage": "https://www.spruproducts.in/images/our-work/s6.jpg",
+               "industryTitle": "Railway & Automobile"
+          }
+        ]
    },
    "testimonials": {
      "profileIcon": "https://www.spruproducts.in/images/testimonials/t1.jpg",
@@ -74,5 +111,20 @@
      "name3": "Hament Gupta",
      "role3": "Proprieter",
      "company3": "GNG Distributors, Sitapur"
+   },
+   "footer": {
+     "footerText": "Spru Products is one of the reliable Manufacturers, Exporters, and Suppliers of many items. We are an ISO 9001-2008 certified company. Our product range comprises of House Cleaning Chemicals, Autocare Products, and Laundry Products. We deliver good quality products at low cost. That is why our customers trust us and this helps us to create a long-term relationship with our customers.",
+     "link1": "About",
+     "link2": "Vision & Mission",
+     "link3": "Guiding Principles",
+     "link4": "Catalogues",
+     "link5": "Certificates",
+     "link6": "Career",
+     "link7": "Distributor",
+     "link8": "Gallery",
+     "link9": "Contact Us",
+     "address": "1st Floor, Ories Tower Plot No.- 6, Opp. New High Court Faizabad Road, Lucknow",
+     "mobile": "(+91) 7355147501 (24/7 Support Line)",
+     "email": "info@spruproducts.in"
    }
 }
