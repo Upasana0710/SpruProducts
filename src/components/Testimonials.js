@@ -24,13 +24,16 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 24px;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+  }
 `;
 
 const Testimonial = styled.div`
   border-radius: 4px;
   background-color: ${({ theme }) => theme.bg};
   box-shadow: 0px 0px 20px rgba(0, 86, 106, 0.1);
-  border-bottom: 4px solid #2dc1e4;
+  border-bottom: 4px solid ${({ theme }) => theme.primary+99};
   box-sizing: border-box;
   width: 370px;
   height: 335px;
@@ -83,9 +86,7 @@ const TestimonialTextContainer = styled.div`
 `;
 
 const Testimonials = () => {
-    const info = [{comment: data.testimonials.comment1, name: data.testimonials.name1, role: data.testimonials.role1, company: data.testimonials.company1},
-                {comment: data.testimonials.comment2, name: data.testimonials.name2, role: data.testimonials.role2, company: data.testimonials.company2},
-                {comment: data.testimonials.comment3, name: data.testimonials.name3, role: data.testimonials.role3, company: data.testimonials.company3},]
+    const info = data.testimonials.comments;
     return (
         <TestimonialsContainer>
             <Heading>Our Testimonials</Heading>
