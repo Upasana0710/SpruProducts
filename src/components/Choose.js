@@ -12,11 +12,10 @@ const animateBackground = keyframes`
 `;
 const ChooseContainer = styled.div`
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 500px;
+  @media (max-width: 1240px) {
+    height: auto;
+  }
 `;
 
 const GradientBackground = styled.div`
