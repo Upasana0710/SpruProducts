@@ -1,6 +1,6 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import data from '../data.json';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import data from "../data.json";
 
 const animateBackground = keyframes`
   0% {
@@ -19,10 +19,14 @@ const ChooseContainer = styled.div`
 `;
 
 const GradientBackground = styled.div`
-  background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(21, 168, 107)), url(${data.choose.bannerImage});
+  background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(21, 168, 107)),
+    url(${data.choose.bannerImage});
   height: 70%;
   width: 100%;
   opacity: 0.9;
+  @media (max-width: 700px) {
+    height: 60%;
+  }
 `;
 
 const WhiteBackground = styled.div`
@@ -69,6 +73,9 @@ const ServicesContainer = styled.div`
   flex-wrap: wrap;
   gap: 40px;
   width: 100%;
+  @media (max-width: 1000px) {
+    gap: 20px;
+  }
 `;
 
 const ServicesWrapper = styled.div`
@@ -88,6 +95,11 @@ const ServicesWrapper = styled.div`
     background: linear-gradient(to bottom, #3bd969 0, #2d9683 100%);
     animation: ${animateBackground} 2s infinite;
   }
+
+  @media (max-width: 1000px) {
+    width: 150px;
+    height: 170px;
+  }
 `;
 
 const ServicesText = styled.div`
@@ -104,20 +116,20 @@ const Choose = () => {
   return (
     <ChooseContainer>
       <WhiteBackground>
-      <GradientBackground>
-      <ContentContainer>
-        <Heading>{data.choose.chooseHeading}</Heading>
-        <Description>{data.choose.chooseDesc}</Description>
-      </ContentContainer>
-      <ServicesContainer>
-        {services.map((service) => (
-          <ServicesWrapper>
-            <Icon alt="" src={service.chooseIcon} />
-            <ServicesText>{service.chooseService}</ServicesText>
-           </ServicesWrapper>
-        ))}
-      </ServicesContainer>
-      </GradientBackground>
+        <GradientBackground>
+          <ContentContainer>
+            <Heading>{data.choose.chooseHeading}</Heading>
+            <Description>{data.choose.chooseDesc}</Description>
+          </ContentContainer>
+          <ServicesContainer>
+            {services.map((service) => (
+              <ServicesWrapper>
+                <Icon alt="" src={service.chooseIcon} />
+                <ServicesText>{service.chooseService}</ServicesText>
+              </ServicesWrapper>
+            ))}
+          </ServicesContainer>
+        </GradientBackground>
       </WhiteBackground>
     </ChooseContainer>
   );

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import data from '../data.json';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import data from "../data.json";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Heading = styled.b`
   font-size: 38px;
@@ -20,11 +20,10 @@ const ImageContainer = styled.div`
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid #e9e9e9;
   box-sizing: border-box;
-  width: 370px;
+  width: 300px;
   height: auto;
   overflow: hidden;
   cursor: pointer;
-
   @media (max-width: 800px) {
     width: 240px;
   }
@@ -33,6 +32,8 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   display: block;
   object-fit: cover;
+  width: 100%;
+  height: auto
   vertical-align: middle;
   &:hover {
     transform: scale(1.5);
@@ -44,16 +45,16 @@ const Images = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 68px;
-
+  width: 100%;
   @media (max-width: 800px) {
-    max-width: 400px;
+    max-width: 340px;
     justify-content: space-evenly;
   }
 `;
 
 const ProductsContainer = styled.div`
   background-color: ${({ theme }) => theme.bg};
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -64,16 +65,16 @@ const ProductsContainer = styled.div`
 
 const Products = () => {
   const [slidesPerView, setSlidesPerView] = useState(3);
-  const [maxWidth, setMaxWidth] = useState('1100px');
+  const [maxWidth, setMaxWidth] = useState("1100px");
 
   useEffect(() => {
     const calculateSlidesPerView = (width) => {
       if (width <= 1100) {
-        return { slides: 2, maxWidth: '800px' };
+        return { slides: 2, maxWidth: "800px" };
       } else if (width <= 800) {
-        return { slides: 1, maxWidth: '600px' };
+        return { slides: 1, maxWidth: "600px" };
       } else {
-        return { slides: 3, maxWidth: '1100px' };
+        return { slides: 3, maxWidth: "1100px" };
       }
     };
 
@@ -83,11 +84,11 @@ const Products = () => {
       setMaxWidth(maxWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize(); // Initial call to set initial slidesPerView value
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -97,7 +98,11 @@ const Products = () => {
     <ProductsContainer>
       <Heading>Our Products</Heading>
       <Images>
-        <Swiper spaceBetween={50} slidesPerView={slidesPerView} style={{ maxWidth, width: '100%' }}>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={slidesPerView}
+          style={{ maxWidth, width: "100%" }}
+        >
           {products.map((product, index) => (
             <SwiperSlide key={index}>
               <ImageContainer>

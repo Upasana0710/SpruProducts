@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import data from '../data.json';
+import React from "react";
+import styled from "styled-components";
+import data from "../data.json";
 
 const WelcomeContainer = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const Content = styled.div`
 
   @media (max-width: 1000px) {
     flex-direction: column;
-    gap: 20px;
+    align-items: start;
   }
 `;
 
@@ -37,18 +37,22 @@ const Image = styled.img`
   }
   @media (max-width: 560px) {
     display: block;
-    width: 80%;
+    width: 90%;
   }
 `;
 
 const Written = styled.div`
   display: flex;
   flex-direction: column;
-
   @media (max-width: 1000px) {
+    width: 95%;
     align-items: center;
     text-align: start;
     margin-top: 40px;
+  }
+
+  @media (max-width: 560px) {
+    width: 90%;
   }
 `;
 

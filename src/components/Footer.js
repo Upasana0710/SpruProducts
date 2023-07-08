@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import logo from '../images/logo.png';
-import data from '../data.json';
+import React from "react";
+import styled from "styled-components";
+import logo from "../images/logo.png";
+import data from "../data.json";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -12,13 +12,16 @@ const FooterContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 30px 0px 0px 0px;
 `;
 
 const FooterTop = styled.div`
   background-color: ${({ theme }) => theme.primary};
   width: 64%;
   height: auto;
-
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 const FlexContainer = styled.div`
@@ -27,8 +30,12 @@ const FlexContainer = styled.div`
   width: 100%;
   @media (max-width: 1300px) {
     width: 100%;
+    flex-direction: column;
     justify-content: space-evenly;
     gap: 20px;
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
   }
 `;
 
@@ -38,8 +45,9 @@ const FooterContent = styled.div`
   justify-content: space-between;
   padding: 0 15px;
   height: 100%;
-  @media (max-width: 1300px) {
+  @media (max-width: 700px) {
     flex-direction: column;
+    align-items: start;
   }
 `;
 
@@ -52,22 +60,26 @@ const LogoIcon = styled.img`
 const WidgetContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   gap: 30px;
 `;
 
 const WidgetText = styled.div`
+  width: 400px;
   line-height: 24px;
   margin-bottom: 15px;
-  color: ${({ theme }) => theme.bgLight+99};
-  width: 400px;
+  color: ${({ theme }) => theme.bgLight + 99};
   text-align: justify;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const QuickLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   text-align: center;
 `;
 
@@ -78,20 +90,22 @@ const Title = styled.div`
   font-family: Lato;
   margin-bottom: 10px;
   text-transform: uppercase;
-  border-bottom: 4px solid ${({ theme }) => theme.secondary}
+  border-bottom: 4px solid ${({ theme }) => theme.secondary};
 `;
 
 const LinkItem = styled.div`
   line-height: 22px;
   display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.bgLight+99};
+  text-align: start;
+  color: ${({ theme }) => theme.bgLight + 99};
 `;
 
 const GetInTouchContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  test-align: start;
+  align-items: start;
+  margin-top: 20px;
 `;
 
 const ContactItem = styled.div`
@@ -99,9 +113,9 @@ const ContactItem = styled.div`
   line-height: 22px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   margin-bottom: 15px;
-  color: ${({ theme }) => theme.bgLight+99};
+  color: ${({ theme }) => theme.bgLight + 99};
 `;
 const Item = styled.div`
   text-transform: uppercase;
@@ -154,12 +168,12 @@ const Footer = () => {
                 <Title>Quick Links</Title>
                 <>
                   {links.map((link) => (
-                    <LinkItem style={{color: "#FFFFFF"}}>{link}</LinkItem>
+                    <LinkItem style={{ color: "#FFFFFF" }}>{link}</LinkItem>
                   ))}
                 </>
               </QuickLinksContainer>
             </WidgetContainer>
-            </FlexContainer>
+          </FlexContainer>
           <WidgetContainer>
             <GetInTouchContainer>
               <Title>Get In Touch</Title>
@@ -168,30 +182,28 @@ const Footer = () => {
                 {data.footer.address}
               </ContactItem>
               <ContactItem>
-              <Item>Mobile:</Item>{data.footer.mobile}
+                <Item>Mobile:</Item>
+                {data.footer.mobile}
               </ContactItem>
               <ContactItem>
-              <Item>Email:</Item>{data.footer.email}
+                <Item>Email:</Item>
+                {data.footer.email}
               </ContactItem>
             </GetInTouchContainer>
           </WidgetContainer>
         </FooterContent>
       </FooterTop>
       <FooterBottom>
-        <BottomText>
-          © Copyright 2020 SPRU Products
-        </BottomText>
-        <BottomText>
-          Design With By LIVE Solutions
-        </BottomText>
+        <BottomText>© Copyright 2020 SPRU Products</BottomText>
+        <BottomText>Design With By LIVE Solutions</BottomText>
         <LinkContainer>
-          <LinkItem style={{color: "#f0f0f0"}}>About</LinkItem>
-          <LinkItem style={{color: "#f0f0f0"}}>Help Desk</LinkItem>
-          <LinkItem style={{color: "#f0f0f0"}}>Privacy Policy</LinkItem>
+          <LinkItem style={{ color: "#f0f0f0" }}>About</LinkItem>
+          <LinkItem style={{ color: "#f0f0f0" }}>Help Desk</LinkItem>
+          <LinkItem style={{ color: "#f0f0f0" }}>Privacy Policy</LinkItem>
         </LinkContainer>
       </FooterBottom>
     </FooterContainer>
   );
-}
+};
 
 export default Footer;
