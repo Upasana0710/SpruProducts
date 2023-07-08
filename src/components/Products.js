@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import data from '../data.json';
+import {Swiper, SwiperSlide} from "swiper/react";
+import 'swiper/css';
 
 const Heading = styled.b`
   font-size: 38px;
@@ -34,10 +36,10 @@ const Images = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  max-width: 1100px; 
+  width: 100%;
   margin-top: 68px;
-  @media (max-width: 1100px) {
-    flex-direction: column;
-  }
+
 `;
 
 const ProductsContainer = styled.div`
@@ -58,11 +60,20 @@ const Products = () => {
     <ProductsContainer>
         <Heading>Our Products</Heading>
         <Images>
+        <Swiper
+            spaceBetween={50}
+            slidesPerView={3}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
           {products.map((product) => (
-            <ImageContainer>
+            <SwiperSlide>
+              <ImageContainer>
               <Image src={product} />
-            </ImageContainer>
+              </ImageContainer>
+            </SwiperSlide>
           ))}
+          </Swiper>
         </Images>
     </ProductsContainer>
   );
