@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import './index.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import styled, { ThemeProvider } from 'styled-components';
-import Home from '../src/pages/Home';
-import Navbar from '../src/components/Navbar';
+import { useState, useEffect } from "react";
+import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import styled, { ThemeProvider } from "styled-components";
+import Home from "../src/pages/Home";
+import Navbar from "../src/components/Navbar";
 import { lightTheme } from "./utils/Theme";
-import Footer from './components/Footer';
-import Menu from '../src/components/Menu';
-import TopBar from '../src/components/TopBar';
+import Footer from "./components/Footer";
+import Menu from "../src/components/Menu";
+import TopBar from "../src/components/TopBar";
 
 const Spru = styled.div`
   display: flex;
@@ -40,11 +40,14 @@ const TopBarContainer = styled.div`
   right: 0;
   z-index: 800;
   transition: transform 0.3s ease-in-out;
-  transform: translateY(${({ hidden }) => (hidden ? '-100%' : '0')});
+  transform: translateY(${({ hidden }) => (hidden ? "-100%" : "0")});
 `;
 
 const Pages = styled.div`
   margin-top: 150px;
+  @media (max-width: 1000px) {
+    margin-top: 70px;
+  }
 `;
 
 function App() {
@@ -61,8 +64,8 @@ function App() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
