@@ -99,30 +99,30 @@
    },
    "testimonials": {
      "profileIcon": "https://www.spruproducts.in/images/testimonials/t1.jpg",
-     "comment1": "I am totally surprised by the quality. Amazing Products with the best quality. SYFO Toilet Cleaner is superb... Well done Spru!",
-     "name1": "Dinesh Jaiswal",
-     "role1": "Proprieter",
-     "company1": "Jaiswal Trading Company, Maharajganj",
-     "comment2": "Kitchen Product range is quite impressive. It will be good option for hotel industry. Highly Recommended..",
-     "name2": "Anil Kumar Mathur",
-     "role2": "Proprieter",
-     "company2": "MMR Enterprises, Lucknow",
-     "comment3": "I am very happy with Spru Products, they are very friendly and always ready to take new challenge . We closed several great clients in Utter Pradesh as well India also.",
-     "name3": "Hament Gupta",
-     "role3": "Proprieter",
-     "company3": "GNG Distributors, Sitapur"
+     "comments": [
+          {
+               "comment": "I am totally surprised by the quality. Amazing Products with the best quality. SYFO Toilet Cleaner is superb... Well done Spru!",
+               "name": "Dinesh Jaiswal",
+               "role": "Proprieter",
+               "company": "Jaiswal Trading Company, Maharajganj"
+          },
+          {
+               "comment": "Kitchen Product range is quite impressive. It will be good option for hotel industry. Highly Recommended..",
+               "name": "Anil Kumar Mathur",
+               "role": "Proprieter",
+               "company": "MMR Enterprises, Lucknow"
+          },
+          {
+               "comment": "I am very happy with Spru Products, they are very friendly and always ready to take new challenge . We closed several great clients in Utter Pradesh as well India also.",
+               "name": "Hament Gupta",
+               "role": "Proprieter",
+               "company": "GNG Distributors, Sitapur"
+          }
+     ]
    },
    "footer": {
      "footerText": "Spru Products is one of the reliable Manufacturers, Exporters, and Suppliers of many items. We are an ISO 9001-2008 certified company. Our product range comprises of House Cleaning Chemicals, Autocare Products, and Laundry Products. We deliver good quality products at low cost. That is why our customers trust us and this helps us to create a long-term relationship with our customers.",
-     "link1": "About",
-     "link2": "Vision & Mission",
-     "link3": "Guiding Principles",
-     "link4": "Catalogues",
-     "link5": "Certificates",
-     "link6": "Career",
-     "link7": "Distributor",
-     "link8": "Gallery",
-     "link9": "Contact Us",
+     "links": ["About", "Vision & Mission", "Guiding Principles", "Catalogues", "Certificates", "Career", "Distributor", "Gallery", "Contact Us"],
      "address": "1st Floor, Ories Tower Plot No.- 6, Opp. New High Court Faizabad Road, Lucknow",
      "mobile": "(+91) 7355147501 (24/7 Support Line)",
      "email": "info@spruproducts.in"
