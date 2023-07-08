@@ -111,7 +111,7 @@ const Testimonials = () => {
   const info = data.testimonials.comments;
   let slidesPerView = 3;
 
-  if (window.innerWidth <= 1024) {
+  if (window.innerWidth <= 1100) {
     slidesPerView = 2;
   }
 
