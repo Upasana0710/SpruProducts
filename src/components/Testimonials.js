@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import data from '../data.json';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import data from "../data.json";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const TestimonialsContainer = styled.div`
   border-radius: 4px;
@@ -33,7 +33,7 @@ const Container = styled.div`
   width: 100%;
 
   @media (max-width: 768px) {
-    max-width: 400px;
+    max-width: 320px;
   }
 `;
 
@@ -66,6 +66,7 @@ const TestimonialDetail = styled.div`
 
   @media (max-width: 768px) {
     width: 180px;
+    font-size: 10px;
   }
 `;
 
@@ -108,16 +109,16 @@ const TestimonialTextContainer = styled.div`
 
 const Testimonials = () => {
   const [slidesPerView, setSlidesPerView] = useState(3);
-  const [maxWidth, setMaxWidth] = useState('1100px');
+  const [maxWidth, setMaxWidth] = useState("1100px");
 
   useEffect(() => {
     const calculateSlidesPerView = (width) => {
       if (width <= 1100) {
-        return { slides: 2, maxWidth: '800px' };
+        return { slides: 2, maxWidth: "800px" };
       } else if (width <= 768) {
-        return { slides: 1, maxWidth: '600px' };
+        return { slides: 1, maxWidth: "600px" };
       } else {
-        return { slides: 3, maxWidth: '1100px' };
+        return { slides: 3, maxWidth: "1100px" };
       }
     };
 
@@ -127,11 +128,11 @@ const Testimonials = () => {
       setMaxWidth(maxWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize(); // Initial call to set initial slidesPerView value
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -141,7 +142,10 @@ const Testimonials = () => {
     <TestimonialsContainer>
       <Heading>Our Testimonials</Heading>
       <Container>
-        <Swiper slidesPerView={slidesPerView} style={{ maxWidth, width: '100%' }}>
+        <Swiper
+          slidesPerView={slidesPerView}
+          style={{ maxWidth, width: "100%" }}
+        >
           {info.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <Testimonial>
@@ -149,7 +153,9 @@ const Testimonials = () => {
                   <TestimonialIcon alt="" src={data.testimonials.profileIcon} />
                 </TestimonialPic>
                 <TestimonialDetail>
-                  <TestimonialTextContainer>{testimonial.comment}</TestimonialTextContainer>
+                  <TestimonialTextContainer>
+                    {testimonial.comment}
+                  </TestimonialTextContainer>
                   <StrongName>{testimonial.name}</StrongName>
                   <CompanyName>{testimonial.role}</CompanyName>
                   <CompanyName>{testimonial.company}</CompanyName>
