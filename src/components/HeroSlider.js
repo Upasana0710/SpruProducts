@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import data from '../data.json';
 
@@ -26,7 +26,7 @@ const slideIn = keyframes`
 
 const SlideshowContainer = styled.div`
   position: relative;
-  height: 720px;
+  max-width: 100%;
   overflow: hidden;
 `;
 
@@ -34,15 +34,17 @@ const SlideshowImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   opacity: ${props => (props.isActive ? 1 : 0)};
   animation: ${props => (props.isActive ? slideIn : slideOut)} 1s ease-in-out;
 `;
 
 const HeroSlider = () => {
-  const images = [data.images.heroimage1, data.images.heroimage2, data.images.heroimage3];
+  const images = [data.hero.heroimage1, data.hero.heroimage2, data.hero.heroimage3];
   const [activeIndex, setActiveIndex] = useState(0);
+  const slideshowRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,14 +54,31 @@ const HeroSlider = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const setContainerHeight = () => {
+      const activeImage = slideshowRef.current.querySelector('.active');
+      if (activeImage) {
+        slideshowRef.current.style.height = `${activeImage.clientHeight}px`;
+      }
+    };
+
+    window.addEventListener('resize', setContainerHeight);
+    setContainerHeight();
+
+    return () => {
+      window.removeEventListener('resize', setContainerHeight);
+    };
+  }, []);
+
   return (
-    <SlideshowContainer>
+    <SlideshowContainer ref={slideshowRef}>
       {images.map((image, index) => (
         <SlideshowImage
           key={index}
           src={image}
           alt={`Image ${index + 1}`}
           isActive={index === activeIndex}
+          className={index === activeIndex ? 'active' : ''}
         />
       ))}
     </SlideshowContainer>

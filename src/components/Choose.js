@@ -1,20 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import data from '../data.json';
 
+const animateBackground = keyframes`
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+`;
 const ChooseContainer = styled.div`
   width: 100%;
-  height: 480px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 `;
 
 const GradientBackground = styled.div`
   background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(21, 168, 107)), url(${data.choose.bannerImage});
-  height: 350px;
+  height: 70%;
   width: 100%;
   opacity: 0.9;
 `;
@@ -22,7 +29,8 @@ const GradientBackground = styled.div`
 const WhiteBackground = styled.div`
   background-color: #fff;
   width: 100%;
-  height: 130px;
+  height: 100%;
+  padding: 20px 0px;
 `;
 
 const Heading = styled.div`
@@ -31,6 +39,7 @@ const Heading = styled.div`
   text-align: center;
   color: ${({ theme }) => theme.bg};
   margin-top: 80px;
+  width: 100%;
 `;
 
 const ContentContainer = styled.div`
@@ -40,12 +49,12 @@ const ContentContainer = styled.div`
   justify-content: center;
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   text-align: center;
   color: ${({ theme }) => theme.bgLight};
-  width: 700px;
+  max-width: 700px;
   line-height: 24px;
-  margin-top: 40px;
+  margin: 40px 0px;
 `;
 
 const Icon = styled.img`
@@ -55,12 +64,12 @@ const Icon = styled.img`
 `;
 
 const ServicesContainer = styled.div`
-  position: absolute;
-  top: 260px;
-  left: 20%;
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 40px;
+  width: 100%;
 `;
 
 const ServicesWrapper = styled.div`
@@ -74,10 +83,11 @@ const ServicesWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 16px;
-  &:hover{
-    transform-origin: bottom center;
-    background: linear-gradient(to bottom, #0077d8 0, #16bae1 100%);
-    transition: transform 0.3s;
+  background-size: 100% 200%;
+  transition: background-position 0.5s;
+  &:hover {
+    background: linear-gradient(to bottom, #3bd969 0, #2d9683 100%);
+    animation: ${animateBackground} 2s infinite;
   }
 `;
 
@@ -91,42 +101,25 @@ const ServicesText = styled.div`
 `;
 
 const Choose = () => {
+  const services = data.choose.services;
   return (
     <ChooseContainer>
+      <WhiteBackground>
       <GradientBackground>
       <ContentContainer>
         <Heading>{data.choose.chooseHeading}</Heading>
         <Description>{data.choose.chooseDesc}</Description>
       </ContentContainer>
       <ServicesContainer>
-        <ServicesWrapper>
-          <Icon alt="" src={data.choose.chooseIcon1} />
-          <ServicesText>{data.choose.chooseService1}</ServicesText>
-        </ServicesWrapper>
-        <ServicesWrapper>
-          <Icon alt="" src={data.choose.chooseIcon2} />
-          <ServicesText>{data.choose.chooseService2}</ServicesText>
-        </ServicesWrapper>
-        <ServicesWrapper>
-          <Icon alt="" src={data.choose.chooseIcon3} />
-          <ServicesText>{data.choose.chooseService3}</ServicesText>
-        </ServicesWrapper>
-        <ServicesWrapper>
-          <Icon alt="" src={data.choose.chooseIcon4} />
-          <ServicesText>{data.choose.chooseService4}</ServicesText>
-        </ServicesWrapper>
-        <ServicesWrapper>
-          <Icon alt="" src={data.choose.chooseIcon5} />
-          <ServicesText>{data.choose.chooseService5}</ServicesText>
-        </ServicesWrapper>
-        <ServicesWrapper>
-          <Icon alt="" src={data.choose.chooseIcon6} />
-          <ServicesText>{data.choose.chooseService6}</ServicesText>
-        </ServicesWrapper>
+        {services.map((service) => (
+          <ServicesWrapper>
+            <Icon alt="" src={service.chooseIcon} />
+            <ServicesText>{service.chooseService}</ServicesText>
+           </ServicesWrapper>
+        ))}
       </ServicesContainer>
       </GradientBackground>
-      <WhiteBackground />
-      {/* Repeat the above ServicesContainer block for other sections */}
+      </WhiteBackground>
     </ChooseContainer>
   );
 };

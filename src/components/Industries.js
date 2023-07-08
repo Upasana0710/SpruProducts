@@ -15,7 +15,7 @@ const Paragraph = styled.div`
   font-size: 16px;
   font-family: Lato;
   color: ${({ theme }) => theme.bgLight};
-  width: 700px;
+  max-width: 700px;
   text-align: center;
   margin-bottom: 50px;
 `;
@@ -29,12 +29,13 @@ const ContentContainer = styled.div`
 
 const IndustriesContainer = styled.div`
   width: 100%;
-  height: 800px;
+  height: auto;
   background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(21, 168, 107));
   opacity: 0.9;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 0px;
 `;
 const Items = styled.div`
   width: 80%;
@@ -77,13 +78,7 @@ const PseudoOverlay = styled.div`
 `;
 
 const Industries = () => {
-    const info = [ {image: data.industries.industry1Image, title: data.industries.industry1Title},
-                   {image: data.industries.industry2Image, title: data.industries.industry2Title},
-                   {image: data.industries.industry3Image, title: data.industries.industry3Title},
-                   {image: data.industries.industry4Image, title: data.industries.industry4Title},
-                   {image: data.industries.industry5Image, title: data.industries.industry5Title},
-                   {image: data.industries.industry6Image, title: data.industries.industry6Title}
-                ]
+    const info = data.industries.industryInfo;
   return (
     <IndustriesContainer>
       <ContentContainer>
@@ -93,7 +88,7 @@ const Industries = () => {
             <Items>
                 {info.map((industry) => (
                     <ItemContainer>
-                        <Image alt="" src={industry.image} />
+                        <Image alt="" src={industry.industryImage} />
                         <PseudoOverlay />
                     </ItemContainer>
                 ))}

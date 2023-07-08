@@ -9,6 +9,9 @@ height: auto;
 width: 100%;
 display: flex;
 justify-content: center;
+@media (max-width: 1700px) {
+    display: none;
+  }
 `;
 const FlexContainer = styled.div`
 display: flex;
@@ -39,7 +42,7 @@ flex-direction: column;
 gap: 8px;
 `;
 
-const TopBar = () => {
+const TopBar = ({ menuOpen, setMenuOpen }) => {
   return (
     <TopBarContainer>
         <FlexContainer>
