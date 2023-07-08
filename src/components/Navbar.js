@@ -2,9 +2,13 @@ import styled from "styled-components";
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Item = styled.div`
-  line-height: 27px;
+  line-height: 66px;
   text-transform: uppercase;
   font-weight: 500;
+  cursor: pointer;
+  &:hover{
+    border-bottom: 4px solid yellow;
+  }
 `;
 const List = styled.div`
   display: flex;
