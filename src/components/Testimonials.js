@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import data from '../data.json';
+import {Swiper, SwiperSlide} from "swiper/react";
 
 const TestimonialsContainer = styled.div`
   border-radius: 4px;
@@ -24,9 +25,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 24px;
-  @media (max-width: 1100px) {
-    flex-direction: column;
-  }
+  max-width: 1100px;
+  width: 100%;
 `;
 
 const Testimonial = styled.div`
@@ -91,7 +91,14 @@ const Testimonials = () => {
         <TestimonialsContainer>
             <Heading>Our Testimonials</Heading>
             <Container>
+              <Swiper
+              spaceBetween={50}
+              slidesPerView={3}
+              onSlideChange={() => console.log('slide change')}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
                 {info.map((testimonial) => (
+                  <SwiperSlide>
                     <Testimonial>
                     <TestimonialPic>
                         <TestimonialIcon alt="" src={data.testimonials.profileIcon} />
@@ -103,7 +110,9 @@ const Testimonials = () => {
                         <CompanyName>{testimonial.company}</CompanyName>
                     </TestimonialDetail>
                 </Testimonial>
+                </SwiperSlide>
                 ))}
+                </Swiper>
             </Container>
         </TestimonialsContainer>
     );
