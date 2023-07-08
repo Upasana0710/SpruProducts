@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import data from '../data.json';
-import {Swiper, SwiperSlide} from "swiper/react";
-import 'swiper/css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Heading = styled.b`
   font-size: 38px;
@@ -11,6 +13,7 @@ const Heading = styled.b`
   align-items: center;
   justify-content: center;
 `;
+
 const ImageContainer = styled.div`
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0);
@@ -20,13 +23,14 @@ const ImageContainer = styled.div`
   width: 370px;
   height: auto;
   overflow: hidden;
-  cursor:pointer;
+  cursor: pointer;
 `;
+
 const Image = styled.img`
   display: block;
   object-fit: center-crop;
-  vertically-align: middle;
-  &:hover{
+  vertical-align: middle;
+  &:hover {
     transform: scale(1.5);
   }
 `;
@@ -36,10 +40,17 @@ const Images = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  max-width: 1100px; 
+  max-width: 1100px;
   width: 100%;
   margin-top: 68px;
 
+  @media (max-width: 1024px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 5px;
+  }
 `;
 
 const ProductsContainer = styled.div`
@@ -53,28 +64,32 @@ const ProductsContainer = styled.div`
   padding-bottom: 40px;
 `;
 
-
 const Products = () => {
   const products = data.products;
+  let slidesPerView = 3;
+
+  if (window.innerWidth <= 1100) {
+    slidesPerView = 2;
+  }
+
+  if (window.innerWidth <= 768) {
+    slidesPerView = 1;
+  }
+
   return (
     <ProductsContainer>
-        <Heading>Our Products</Heading>
-        <Images>
-        <Swiper
-            spaceBetween={50}
-            slidesPerView={3}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-          {products.map((product) => (
-            <SwiperSlide>
+      <Heading>Our Products</Heading>
+      <Images>
+        <Swiper spaceBetween={50} slidesPerView={slidesPerView}>
+          {products.map((product, index) => (
+            <SwiperSlide key={index}>
               <ImageContainer>
-              <Image src={product} />
+                <Image src={product} />
               </ImageContainer>
             </SwiperSlide>
           ))}
-          </Swiper>
-        </Images>
+        </Swiper>
+      </Images>
     </ProductsContainer>
   );
 };
