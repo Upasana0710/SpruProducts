@@ -138,7 +138,7 @@ const LinkContainer = styled.div`
 `;
 
 const Footer = () => {
-  const links = [data.footer.link1, data.footer.link2, data.footer.link3, data.footer.link4, data.footer.link5, data.footer.link6, data.footer.link7, data.footer.link8, data.footer.link9 ]
+  const links = data.footer.links;
   return (
     <FooterContainer>
       <FooterTop>
