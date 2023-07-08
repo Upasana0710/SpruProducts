@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled, { keyframes } from "styled-components";
 import data from "../data.json";
 
@@ -19,8 +19,8 @@ const ChooseContainer = styled.div`
 `;
 
 const GradientBackground = styled.div`
-  background: linear-gradient(76.08deg, rgb(33, 107, 93), rgb(21, 168, 107)),
-    url(${data.choose.bannerImage});
+background: linear-gradient(76.08deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+url(${data.choose.bannerImage});
   height: 70%;
   width: 100%;
   opacity: 0.9;
@@ -112,11 +112,32 @@ const ServicesText = styled.div`
 `;
 
 const Choose = () => {
+  const [scroll, setScroll] = useState(0);
+    useEffect(() => {
+        const handleScroll = () => {
+            setScroll(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
   const services = data.choose.services;
+  const backgroundStyles = {
+    width: '100%',
+    background: `linear-gradient(to bottom, rgba(0, 128, 0, 0.5), rgba(0, 128, 0, 0.5)), url(${data.choose.bannerImage})`,
+    backgroundPosition: `center ${scroll * 0.5}px`, 
+    backgroundSize: 'cover',
+    transform: `rotate(${scroll < 0 ? 180 : 0}deg)`,
+    transition: 'transform 0.3s ease',
+    marginBottom: "200px"
+};
   return (
     <ChooseContainer>
       <WhiteBackground>
-        <GradientBackground>
+        <GradientBackground style={backgroundStyles}>
           <ContentContainer>
             <Heading>{data.choose.chooseHeading}</Heading>
             <Description>{data.choose.chooseDesc}</Description>
