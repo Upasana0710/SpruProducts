@@ -121,6 +121,7 @@ const FooterBottom = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
     gap: 10px;
+    padding: 10px 0px;
   }
 `;
 
