@@ -16,7 +16,7 @@ const ImageContainer = styled.div`
   border: 1px solid #e9e9e9;
   box-sizing: border-box;
   width: 370px;
-  height: 330px;
+  height: auto;
   overflow: hidden;
   cursor:pointer;
 `;
@@ -35,33 +35,34 @@ const Images = styled.div`
   align-items: center;
   gap: 20px;
   margin-top: 68px;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+  }
 `;
 
 const ProductsContainer = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;
-  height: 600px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 40px;
 `;
 
 
 const Products = () => {
+  const products = data.products;
   return (
     <ProductsContainer>
         <Heading>Our Products</Heading>
         <Images>
+          {products.map((product) => (
             <ImageContainer>
-                <Image src={data.products.product1Image} />
+              <Image src={product} />
             </ImageContainer>
-            <ImageContainer>
-                <Image src={data.products.product2Image} />
-            </ImageContainer>
-            <ImageContainer>
-                <Image src={data.products.product3Image} />
-            </ImageContainer>
+          ))}
         </Images>
     </ProductsContainer>
   );
