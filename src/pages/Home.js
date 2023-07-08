@@ -14,11 +14,11 @@ flex-direction: column;
 const Home = () => {
   return (
     <HomeContainer>
-      <HeroSlider />
-      <Welcome />
-      <Choose />
-      <Products />
-      <Industries />
+        <HeroSlider />
+        <Welcome />
+        <Choose />
+        <Products />
+        <Industries />
       <Testimonials />
     </HomeContainer>
   )
