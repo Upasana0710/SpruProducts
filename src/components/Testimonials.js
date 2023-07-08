@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import data from '../data.json';
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const TestimonialsContainer = styled.div`
   border-radius: 4px;
@@ -33,8 +33,7 @@ const Container = styled.div`
   width: 100%;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 20px;
+    max-width: 400px;
   }
 `;
 
@@ -53,7 +52,7 @@ const Testimonial = styled.div`
   padding: 10px 0px;
 
   @media (max-width: 768px) {
-    width: 280px;
+    width: 200px;
   }
 `;
 
@@ -66,7 +65,7 @@ const TestimonialDetail = styled.div`
   flex-direction: column;
 
   @media (max-width: 768px) {
-    width: 260px;
+    width: 180px;
   }
 `;
 
@@ -108,22 +107,41 @@ const TestimonialTextContainer = styled.div`
 `;
 
 const Testimonials = () => {
+  const [slidesPerView, setSlidesPerView] = useState(3);
+  const [maxWidth, setMaxWidth] = useState('1100px');
+
+  useEffect(() => {
+    const calculateSlidesPerView = (width) => {
+      if (width <= 1100) {
+        return { slides: 2, maxWidth: '800px' };
+      } else if (width <= 768) {
+        return { slides: 1, maxWidth: '600px' };
+      } else {
+        return { slides: 3, maxWidth: '1100px' };
+      }
+    };
+
+    const handleResize = () => {
+      const { slides, maxWidth } = calculateSlidesPerView(window.innerWidth);
+      setSlidesPerView(slides);
+      setMaxWidth(maxWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial call to set initial slidesPerView value
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const info = data.testimonials.comments;
-  let slidesPerView = 3;
-
-  if (window.innerWidth <= 1100) {
-    slidesPerView = 2;
-  }
-
-  if (window.innerWidth <= 768) {
-    slidesPerView = 1;
-  }
 
   return (
     <TestimonialsContainer>
       <Heading>Our Testimonials</Heading>
       <Container>
-        <Swiper spaceBetween={50} slidesPerView={slidesPerView}>
+        <Swiper slidesPerView={slidesPerView} style={{ maxWidth, width: '100%' }}>
           {info.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <Testimonial>

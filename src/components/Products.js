@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import data from '../data.json';
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Heading = styled.b`
   font-size: 38px;
@@ -24,11 +24,15 @@ const ImageContainer = styled.div`
   height: auto;
   overflow: hidden;
   cursor: pointer;
+
+  @media (max-width: 800px) {
+    width: 240px;
+  }
 `;
 
 const Image = styled.img`
   display: block;
-  object-fit: center-crop;
+  object-fit: cover;
   vertical-align: middle;
   &:hover {
     transform: scale(1.5);
@@ -37,25 +41,19 @@ const Image = styled.img`
 
 const Images = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  max-width: 1100px;
-  width: 100%;
   margin-top: 68px;
 
-  @media (max-width: 1024px) {
-    gap: 10px;
-  }
-
-  @media (max-width: 768px) {
-    gap: 5px;
+  @media (max-width: 800px) {
+    max-width: 400px;
+    justify-content: space-evenly;
   }
 `;
 
 const ProductsContainer = styled.div`
   background-color: ${({ theme }) => theme.bg};
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -65,26 +63,45 @@ const ProductsContainer = styled.div`
 `;
 
 const Products = () => {
+  const [slidesPerView, setSlidesPerView] = useState(3);
+  const [maxWidth, setMaxWidth] = useState('1100px');
+
+  useEffect(() => {
+    const calculateSlidesPerView = (width) => {
+      if (width <= 1100) {
+        return { slides: 2, maxWidth: '800px' };
+      } else if (width <= 800) {
+        return { slides: 1, maxWidth: '600px' };
+      } else {
+        return { slides: 3, maxWidth: '1100px' };
+      }
+    };
+
+    const handleResize = () => {
+      const { slides, maxWidth } = calculateSlidesPerView(window.innerWidth);
+      setSlidesPerView(slides);
+      setMaxWidth(maxWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial call to set initial slidesPerView value
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const products = data.products;
-  let slidesPerView = 3;
-
-  if (window.innerWidth <= 1100) {
-    slidesPerView = 2;
-  }
-
-  if (window.innerWidth <= 768) {
-    slidesPerView = 1;
-  }
 
   return (
     <ProductsContainer>
       <Heading>Our Products</Heading>
       <Images>
-        <Swiper spaceBetween={50} slidesPerView={slidesPerView}>
+        <Swiper spaceBetween={50} slidesPerView={slidesPerView} style={{ maxWidth, width: '100%' }}>
           {products.map((product, index) => (
             <SwiperSlide key={index}>
               <ImageContainer>
-                <Image src={product} />
+                <Image src={product} alt={`Product ${index}`} />
               </ImageContainer>
             </SwiperSlide>
           ))}
