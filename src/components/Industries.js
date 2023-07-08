@@ -37,6 +37,30 @@ const IndustriesContainer = styled.div`
   justify-content: center;
   padding: 40px 0px;
 `;
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.secondary};
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+const OverlayText = styled.div`
+  position: absolute;
+  top: 80%;
+  right: 10%;
+  color: ${({ theme }) => theme.bg};
+  font-size: 18px;
+  font-weight: 500;
+`;
 const Items = styled.div`
   width: 80%;
   display: flex;
@@ -53,10 +77,14 @@ const Images = styled.div`
   gap: 24px;
 `;
 const ItemContainer = styled.div`
+  position: relative;
   background-color: #fff;
   width: 370px;
   height: 231px;
   overflow: hidden;
+  &:hover ${Overlay} {
+    opacity: 1;
+  }
 `;
 
 const Image = styled.img`
@@ -68,13 +96,6 @@ const Image = styled.img`
   &:hover{
     transform: scale(1.5);
   }
-`;
-
-const PseudoOverlay = styled.div`
-  background: linear-gradient(121.98deg, #16bae1, #008bff 50%, #16bae1);
-  width: 370px;
-  height: 231px;
-  opacity: 0.1;
 `;
 
 const Industries = () => {
@@ -89,7 +110,9 @@ const Industries = () => {
                 {info.map((industry) => (
                     <ItemContainer>
                         <Image alt="" src={industry.industryImage} />
-                        <PseudoOverlay />
+                        <Overlay>
+                          <OverlayText>{industry.industryTitle}</OverlayText>
+                        </Overlay>
                     </ItemContainer>
                 ))}
             </Items>
